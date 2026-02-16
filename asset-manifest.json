@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Mohamed-Aymen-TLILI.github.io/cv-dev-sec-ops/static/css/main.e6c13ad2.css",
+    "main.js": "/Mohamed-Aymen-TLILI.github.io/cv-dev-sec-ops/static/js/main.cad36975.js",
+    "static/js/453.f7e0ab85.chunk.js": "/Mohamed-Aymen-TLILI.github.io/cv-dev-sec-ops/static/js/453.f7e0ab85.chunk.js",
+    "static/media/profile.jpg": "/Mohamed-Aymen-TLILI.github.io/cv-dev-sec-ops/static/media/profile.3032ba7fc85e0314d124.jpg",
+    "index.html": "/Mohamed-Aymen-TLILI.github.io/cv-dev-sec-ops/index.html",
+    "main.e6c13ad2.css.map": "/Mohamed-Aymen-TLILI.github.io/cv-dev-sec-ops/static/css/main.e6c13ad2.css.map",
+    "main.cad36975.js.map": "/Mohamed-Aymen-TLILI.github.io/cv-dev-sec-ops/static/js/main.cad36975.js.map",
+    "453.f7e0ab85.chunk.js.map": "/Mohamed-Aymen-TLILI.github.io/cv-dev-sec-ops/static/js/453.f7e0ab85.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.cad36975.js"
+  ]
+}
