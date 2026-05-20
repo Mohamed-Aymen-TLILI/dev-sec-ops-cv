@@ -1,5 +1,5 @@
 import React from "react";
-import { FaRegSmileWink, FaStar } from "react-icons/fa";
+import {FaRegSmileWink, FaStar,} from "react-icons/fa";
 import {
     AsideBlock,
     AsideBlockh3,
@@ -23,22 +23,22 @@ import {
     Mainh2,
     Mainp,
     Picture,
-    Pictureimg,
+    Pictureimg
 } from "./Cv.elements";
-import profile from "../../images/profile.jpg";
+import profile from '../../images/profile.jpg';
 
 export default function CV() {
     return (
         <GridLayout>
             <Header>
                 <Headerh1>Mohamed Aymen TLILI</Headerh1>
-                <Headerp>DevSecOps Engineer | Senior Java Backend Specialist</Headerp>
+                <Headerp>
+                    DevSecOps Ingenieur | Cloud & CI/CD Spezialist
+                </Headerp>
             </Header>
-
             <Picture>
-                <Pictureimg src={profile} alt="profile" />
+                <Pictureimg src={profile} alt="test" />
             </Picture>
-
             <AsideLeft>
                 <AsideBlock>
                     <AsideBlockh3>KONTAKT</AsideBlockh3>
@@ -49,48 +49,44 @@ export default function CV() {
                     <AsideBlockh3>Adresse</AsideBlockh3>
                     <AsideBlockh3p>
                         Chemin de veilloud 11
-                        <br />
+                        <br/>
                         1024 Ecublens VD
                     </AsideBlockh3p>
                 </AsideBlock>
+                <AsideBlockh3>KERNKOMPETENZEN</AsideBlockh3>
+                <AsideBlockh3p>
+                    <strong>CI/CD & Automatisierung:</strong>
+                    GitHub Actions, Jenkins, Azure DevOps
+                </AsideBlockh3p>
 
-                <AsideBlock>
-                    <AsideBlockh3>KERNKOMPETENZEN</AsideBlockh3>
-                    <AsideBlockh3p>
-                        <strong>DevSecOps:</strong> CI/CD (GitHub Actions, Jenkins), Docker, Vault
-                    </AsideBlockh3p>
-                    <AsideBlockh3p>
-                        <strong>Cloud:</strong> Azure, Azure SQL
-                    </AsideBlockh3p>
-                    <AsideBlockh3p>
-                        <strong>Sicherheit:</strong> OWASP Top 10, API-Security, RBAC
-                    </AsideBlockh3p>
-                    <AsideBlockh3p>
-                        <strong>Backend:</strong> Java 8–21, Spring Boot, Spring Security
-                    </AsideBlockh3p>
-                    <AsideBlockh3p>
-                        <strong>Frontend:</strong> Angular 16, React, VueJS
-                    </AsideBlockh3p>
-                    <AsideBlockh3p>
-                        <strong>Messaging:</strong> Kafka, RabbitMQ
-                    </AsideBlockh3p>
-                </AsideBlock>
+                <AsideBlockh3p>
+                    <strong>Cloud & Infrastruktur:</strong>
+                    Azure, GCP, Docker, Kubernetes, Terraform
+                </AsideBlockh3p>
 
-                <AsideBlock>
-                    <AsideBlockh3>AUSBILDUNG / ZERTIFIZIERUNGEN</AsideBlockh3>
-                    <AsideBlockh3p>Microsoft Certified: DevOps Engineer Expert (AZ-400) – 2026</AsideBlockh3p>
-                    <AsideBlockh3p>
-                        Master (M2) Cybersicherheit – Université de Technologie de Troyes – Abschluss erwartet: März 2026
-                    </AsideBlockh3p>
-                    <AsideBlockh3p>Master (M2) Management – Université Paris-Sud (Paris XI) – 2017</AsideBlockh3p>
-                    <AsideBlockh3p>Bachelor (Lizenz) Business Management – Université Paris Ouest Nanterre – 2014</AsideBlockh3p>
-                    <AsideBlockh3p>Bachelor (Lizenz) Informatik – Universität Manouba (Tunesien) – 2012</AsideBlockh3p>
-                </AsideBlock>
+                <AsideBlockh3p>
+                    <strong>Backend Entwicklung:</strong>
+                    Java, Spring Boot, REST APIs, Kafka, RabbitMQ
+                </AsideBlockh3p>
 
+                <AsideBlockh3p>
+                    <strong>Sicherheit & DevSecOps:</strong>
+                    OAuth2, RBAC, OWASP, Vault, Sicherer SDLC
+                </AsideBlockh3p>
+
+                <AsideBlockh3p>
+                    <strong>Monitoring:</strong>
+                    ELK Stack, Kibana, Logging, Leistungsanalyse
+                </AsideBlockh3p>
+
+                <AsideBlockh3p>
+                    <strong>Frontend:</strong>
+                    Angular, React, Vue.js, TypeScript
+                </AsideBlockh3p>
                 <AsideBlock>
-                    <AsideBlockh3>SPRACHEN</AsideBlockh3>
+                    <AsideBlockh3>Sprachen</AsideBlockh3>
                     <AsideBlockstarh3>
-                        Französisch <br />
+                        Englisch  <br />
                         <FaStar />
                         <FaStar />
                         <FaStar />
@@ -98,196 +94,169 @@ export default function CV() {
                         <FaStar />
                     </AsideBlockstarh3>
                     <AsideBlockstarh3>
-                        Deutsch <br />
+                        Deutsch  <br />
                         <FaStar />
                     </AsideBlockstarh3>
                 </AsideBlock>
             </AsideLeft>
-
             <Main>
-                <Mainh2>PROFIL</Mainh2>
+                <Mainh2>BERUFLICHER WERDEGANG</Mainh2>
                 <Mainp>
-                    Microsoft-zertifizierter DevSecOps Engineer mit über 6 Jahren Erfahrung in der Entwicklung von Java/Spring-Boot-Lösungen
-                    in kritischen und hochverfügbaren Umgebungen. Spezialisiert auf API-Sicherheit, die Integration von Security in CI/CD-Pipelines
-                    sowie sichere Cloud-Deployments (Azure, Docker). Kürzlich als Microsoft DevOps Engineer Expert zertifiziert und in Abschlussphase
-                    eines Masterstudiums in Cybersicherheit (Abschluss erwartet: März 2026).
+                    DevSecOps Ingenieur & Softwareentwickler mit über 7 Jahren Erfahrung in der Konzeption, dem Aufbau und dem Betrieb skalierbarer Cloud-nativer Anwendungen und verteilter Systeme.
+
+                    Umfassende Expertise in CI/CD-Automatisierung, sicherer Softwareauslieferung, Cloud-Plattformen und Infrastrukturpraktiken mit praktischer Erfahrung in der Integration von Sicherheit während des gesamten Softwareentwicklungslebenszyklus.
+
+                    Erfahrung in der Backend-Entwicklung mit Java/Spring Boot, Cloud-Deployments auf Azure, containerisierten Umgebungen, API-Sicherheit, Observabilität und Fehlerbehebung in der Produktion.
+
+                    Microsoft-zertifizierter DevOps Engineer Expert (AZ-400) und Inhaber eines Master-Abschlusses in Cybersicherheit mit starkem Fokus auf DevSecOps, Plattformzuverlässigkeit und Cloud-Sicherheit.
                 </Mainp>
-
                 <Mainh2>BERUFSERFAHRUNG</Mainh2>
-
                 <Mainexperience>
                     <Mainexperiencetimeline>
                         <Mainexperiencetimelinep>
-                            Feb 2025 <br />- <br />
-                            Aug 2025
+                            Feb 2025 <br />
+                            - <br />
+                            Sep 2025
                         </Mainexperiencetimelinep>
                     </Mainexperiencetimeline>
                     <Mainexperiencecontent>
                         <Mainexperiencecontenth3>
-                            Staat Freiburg — Senior Java/Angular Entwickler
+                            Staat Freiburg — Softwareingenieur | DevOps & Cloud
                         </Mainexperiencecontenth3>
                         <Mainexperiencecontentp>
                             Java 21 | Spring Boot | Azure SQL | Angular 16 | Vault | CI/CD | Azure
                         </Mainexperiencecontentp>
                         <Mainexperiencecontentul>
-                            Konzeption und Entwicklung sicherer REST-APIs (Spring Security, RBAC)
-                            <br />
-                            Security-Tests und API-Härtung (OWASP Top 10, Validierung, Zugriffskontrolle)
-                            <br />
-                            CI/CD-Integration mit Security- und Qualitätsprüfungen (automatisierte Tests, Dependency-Scanning)
-                            <br />
-                            Azure-Cloud-Integration und Secret-Management (Vault)
-                            <br />
-                            SQL-Performance-Optimierung und Stabilitätsverbesserungen
-                            <br />
-                            Code Reviews und kontinuierliche Verbesserung
-                            <br />
+                            Konzeption und Entwicklung sicherer REST-APIs (Spring Security, RBAC)<br/>
+                            Sicherheitstests und API-Härtung (OWASP Top 10, Validierung, Zugriffskontrolle)<br/>
+                            CI/CD-Integration mit Sicherheits- und Qualitätsprüfungen (automatisierte Tests, Abhängigkeitsscans)<br/>
+                            Azure Cloud-Integration und Geheimnisverwaltung (Vault)<br/>
+                            SQL-Leistungsoptimierung und Stabilitätsverbesserungen<br/>
+                            Code-Reviews und kontinuierliche Verbesserungspraktiken<br/>
                         </Mainexperiencecontentul>
                     </Mainexperiencecontent>
                 </Mainexperience>
-
                 <Mainexperience>
                     <Mainexperiencetimeline>
                         <Mainexperiencetimelinep>
-                            Okt 2024 <br />- <br />
+                            Okt 2024
+                            <br />
+                            - <br />
                             Jan 2025
                         </Mainexperiencetimelinep>
                     </Mainexperiencetimeline>
                     <Mainexperiencecontent>
                         <Mainexperiencecontenth3>
-                            SGS — Senior Java/Angular Entwickler
+                            SGS — Softwareingenieur | DevOps & Cloud
                         </Mainexperiencecontenth3>
                         <Mainexperiencecontentp>
                             Java 21 | Spring Boot | Azure SQL | Angular 16 | Vault | CI/CD | Azure
                         </Mainexperiencecontentp>
                         <Mainexperiencecontentul>
-                            Entwicklung sicherer REST-Services (Spring Security)
-                            <br />
-                            Anwendungssicherheits-Tests (Zugriffskontrolle, Validierung, OWASP)
-                            <br />
-                            CI/CD-Integration und Testautomatisierung
-                            <br />
-                            Azure-Cloud-Integration und Secret-Management
-                            <br />
-                            JPA/SQL-Optimierung sowie Wartung und Weiterentwicklung
-                            <br />
+                            Entwicklung sicherer REST-Dienste (Spring Security)<br/>
+                            Anwendungssicherheitstests (Zugriffskontrolle, Validierung, OWASP)<br/>
+                            CI/CD-Integration und automatisierte Tests<br/>
+                            Azure Cloud-Integration und Geheimnisverwaltung<br/>
+                            JPA/SQL-Optimierung und Anwendungswartung<br/>
                         </Mainexperiencecontentul>
                     </Mainexperiencecontent>
                 </Mainexperience>
-
                 <Mainexperience>
                     <Mainexperiencetimeline>
                         <Mainexperiencetimelinep>
-                            Mär 2024 <br />- <br />
+                            Mär 2024 <br />
+                            - <br />
                             Okt 2024
                         </Mainexperiencetimelinep>
                     </Mainexperiencetimeline>
                     <Mainexperiencecontent>
                         <Mainexperiencecontenth3>
-                            Alptis Versicherung — Senior Java/VueJS Entwickler
+                            Alptis Versicherung — Softwareingenieur | DevOps & Cloud
                         </Mainexperiencecontenth3>
                         <Mainexperiencecontentp>
                             Java 21 | Spring Boot | VueJS | RabbitMQ | CI/CD | GitHub Actions
                         </Mainexperiencecontentp>
                         <Mainexperiencecontentul>
-                            Backend-Entwicklung mit Spring Boot
-                            <br />
-                            Umsetzung von API-Security und Validierungsmechanismen
-                            <br />
-                            RabbitMQ-Integration für asynchrone Kommunikation
-                            <br />
-                            CI/CD-Automatisierung mit GitHub Actions
-                            <br />
-                            Production Support und Incident-Handling
-                            <br />
+                            Backend-Entwicklung mit Spring Boot<br/>
+                            Implementierung von API-Sicherheit und Validierungsmechanismen<br/>
+                            RabbitMQ-Integration für asynchrone Kommunikation<br/>
+                            CI/CD-Automatisierung mit GitHub Actions<br/>
+                            Produktionssupport und Incident-Lösung<br/>
                         </Mainexperiencecontentul>
+
                     </Mainexperiencecontent>
                 </Mainexperience>
-
                 <Mainexperience>
                     <Mainexperiencetimeline>
                         <Mainexperiencetimelinep>
-                            Nov 2022 <br />- <br />
+                            Nov 2022 <br />
+                            - <br />
                             Jan 2024
                         </Mainexperiencetimelinep>
                     </Mainexperiencetimeline>
                     <Mainexperiencecontent>
                         <Mainexperiencecontenth3>
-                            Carrefour — Java/Angular Entwickler
+                            Carrefour — Softwareingenieur | DevOps & Cloud
                         </Mainexperiencecontenth3>
                         <Mainexperiencecontentp>
                             Java 17 | Spring WebFlux | Kafka | PostgreSQL | Angular
                         </Mainexperiencecontentp>
                         <Mainexperiencecontentul>
-                            Entwicklung von Microservices (Spring Boot / WebFlux)
-                            <br />
-                            Sichere API-Entwicklung (Spring Security, OWASP Best Practices)
-                            <br />
-                            Kafka-Integration für asynchrone Workflows
-                            <br />
-                            SQL-Optimierung und Verbesserungen der Codequalität
-                            <br />
+                            Microservices-Entwicklung (Spring Boot / WebFlux)<br/>
+                            Entwicklung sicherer APIs (Spring Security, OWASP Best Practices)<br/>
+                            Kafka-Integration für asynchrone Workflows<br/>
+                            SQL-Optimierung und Codequalitätsverbesserungen<br/>
                         </Mainexperiencecontentul>
                     </Mainexperiencecontent>
                 </Mainexperience>
-
                 <Mainexperience>
                     <Mainexperiencetimeline>
                         <Mainexperiencetimelinep>
-                            Sep 2020 <br />- <br />
+                            Sep 2020 <br />
+                            - <br />
                             Nov 2022
                         </Mainexperiencetimelinep>
                     </Mainexperiencetimeline>
                     <Mainexperiencecontent>
                         <Mainexperiencecontenth3>
-                            Canal+ Group — Java/Angular Entwickler
+                            Canal+ Gruppe — Softwareingenieur | DevOps & Cloud
                         </Mainexperiencecontenth3>
                         <Mainexperiencecontentp>
                             Java 11–17 | Spring Boot | MySQL | Angular | Jenkins | Docker
                         </Mainexperiencecontentp>
                         <Mainexperiencecontentul>
-                            Entwicklung sicherer Microservices
-                            <br />
-                            Implementierung von Spring Security
-                            <br />
-                            SQL-Performance-Optimierung
-                            <br />
-                            CI/CD-Automatisierung und containerisierte Deployments
-                            <br />
-                            Agile Zusammenarbeit und Code Reviews
-                            <br />
+                            Entwicklung sicherer Microservices<br/>
+                            Spring Security Implementierung<br/>
+                            SQL-Leistungsoptimierung<br/>
+                            CI/CD-Automatisierung und containerisierte Bereitstellungen<br/>
+                            Agile Zusammenarbeit und Code-Reviews<br/>
                         </Mainexperiencecontentul>
                     </Mainexperiencecontent>
                 </Mainexperience>
-
                 <Mainexperience>
                     <Mainexperiencetimeline>
                         <Mainexperiencetimelinep>
-                            Aug 2019 <br />- <br />
+                            Aug 2019 <br />
+                            - <br />
                             Mär 2020
                         </Mainexperiencetimelinep>
                     </Mainexperiencetimeline>
                     <Mainexperiencecontent>
                         <Mainexperiencecontenth3>
-                            Disneyland Paris — Java/React Entwickler
+                            Disneyland Paris — Softwareingenieur | DevOps & Cloud
                         </Mainexperiencecontenth3>
                         <Mainexperiencecontentp>
                             Java 8–11 | Spring Boot | MySQL/Oracle | React
                         </Mainexperiencecontentp>
                         <Mainexperiencecontentul>
-                            Implementierung von Backend-Features
-                            <br />
-                            Sichere API-Entwicklung
-                            <br />
-                            Datenbank-Optimierung
-                            <br />
-                            Wartung und kontinuierliche Verbesserungen
-                            <br />
+                            Implementierung von Backend-Funktionen<br/>
+                            Entwicklung sicherer APIs<br/>
+                            Datenbankoptimierung<br/>
+                            Wartung und kontinuierliche Verbesserungen<br/>
                         </Mainexperiencecontentul>
                     </Mainexperiencecontent>
                 </Mainexperience>
             </Main>
-
             <Footer>
                 <Footerh2>
                     <span>aymentli@gmail.com </span>

@@ -32,7 +32,9 @@ export default function CV() {
         <GridLayout>
             <Header>
                 <Headerh1>Mohamed Aymen TLILI</Headerh1>
-                <Headerp>DevSecOps Engineer | Senior Java Backend Specialist</Headerp>
+                <Headerp>
+                    DevSecOps Engineer | Cloud & CI/CD Specialist
+                </Headerp>
             </Header>
             <Picture>
                 <Pictureimg src={profile} alt="test" />
@@ -44,26 +46,43 @@ export default function CV() {
                     <AsideBlockh3p>+41 76 625 55 08</AsideBlockh3p>
                     <AsideBlockh3>e-mail</AsideBlockh3>
                     <AsideBlockh3p>aymentli@gmail.com</AsideBlockh3p>
-                    <AsideBlockh3>Adress</AsideBlockh3>
+                    <AsideBlockh3>Address</AsideBlockh3>
                     <AsideBlockh3p>
                         Chemin de veilloud 11
                         <br/>
                         1024 Ecublens VD
                     </AsideBlockh3p>
                 </AsideBlock>
-                <AsideBlockh3>CORE COMPETENCIES</AsideBlockh3>
-                <AsideBlockh3p><strong>DevSecOps:</strong> CI/CD (GitHub Actions, Jenkins), Docker, Vault</AsideBlockh3p>
-                <AsideBlockh3p><strong>Cloud:</strong> Azure, Azure SQL</AsideBlockh3p>
-                <AsideBlockh3p><strong>Security:</strong> OWASP Top 10, API Security, RBAC</AsideBlockh3p>
-                <AsideBlockh3p><strong>Backend:</strong> Java 8–21, Spring Boot, Spring Security</AsideBlockh3p>
-                <AsideBlockh3p><strong>Frontend:</strong> Angular 16, React, VueJS</AsideBlockh3p>
-                <AsideBlockh3p><strong>Messaging:</strong> Kafka, RabbitMQ</AsideBlockh3p>
-                <AsideBlockh3>EDUCATION / CERTIFICATIONS</AsideBlockh3>
-                <AsideBlockh3p>Microsoft Certified: DevOps Engineer Expert (AZ-400) – 2026</AsideBlockh3p>
-                <AsideBlockh3p>Master’s Degree in Cybersecurity – University of Technology of Troyes – Expected March 2026</AsideBlockh3p>
-                <AsideBlockh3p>Master’s Degree in Management – Paris-Sud University – 2017</AsideBlockh3p>
-                <AsideBlockh3p>Bachelor’s Degree in Business Management – Paris Ouest Nanterre University – 2014</AsideBlockh3p>
-                <AsideBlockh3p>Bachelor’s Degree in Computer Science – University of Manouba (Tunisia) – 2012</AsideBlockh3p>
+                <AsideBlockh3>CORE SKILLS</AsideBlockh3>
+                <AsideBlockh3p>
+                    <strong>CI/CD & Automation:</strong>
+                    GitHub Actions, Jenkins, Azure DevOps
+                </AsideBlockh3p>
+
+                <AsideBlockh3p>
+                    <strong>Cloud & Infrastructure:</strong>
+                    Azure, GCP, Docker, Kubernetes, Terraform
+                </AsideBlockh3p>
+
+                <AsideBlockh3p>
+                    <strong>Backend Engineering:</strong>
+                    Java, Spring Boot, REST APIs, Kafka, RabbitMQ
+                </AsideBlockh3p>
+
+                <AsideBlockh3p>
+                    <strong>Security & DevSecOps:</strong>
+                    OAuth2, RBAC, OWASP, Vault, Secure SDLC
+                </AsideBlockh3p>
+
+                <AsideBlockh3p>
+                    <strong>Monitoring:</strong>
+                    ELK Stack, Kibana, Logging, Performance Analysis
+                </AsideBlockh3p>
+
+                <AsideBlockh3p>
+                    <strong>Frontend:</strong>
+                    Angular, React, Vue.js, TypeScript
+                </AsideBlockh3p>
                 <AsideBlock>
                     <AsideBlockh3>Languages</AsideBlockh3>
                     <AsideBlockstarh3>
@@ -83,22 +102,26 @@ export default function CV() {
             <Main>
                 <Mainh2>PROFESSIONAL SUMMARY</Mainh2>
                 <Mainp>
-                    Microsoft-certified DevSecOps Engineer with over 6 years of experience in Java/Spring Boot development within critical and high-availability environments.
-                    Specialized in API security, CI/CD security integration, and secure cloud deployments (Azure, Docker).
-                    Recently certified Microsoft DevOps Engineer Expert and completing a Master’s degree in Cybersecurity (expected March 2026).
+                    DevSecOps Engineer & Software Engineer with 7+ years of experience designing, building, and operating scalable cloud-native applications and distributed systems.
+
+                    Strong expertise in CI/CD automation, secure software delivery, cloud platforms, and infrastructure practices, with hands-on experience integrating security throughout the software development lifecycle.
+
+                    Experienced in backend engineering with Java/Spring Boot, cloud deployments on Azure, containerized environments, API security, observability, and production troubleshooting.
+
+                    Microsoft Certified DevOps Engineer Expert (AZ-400) and holder of a Master’s degree in Cybersecurity, with a strong focus on DevSecOps, platform reliability, and cloud security.
                 </Mainp>
-                <Mainh2>EXPERIENCES PROFESSIONNELLES</Mainh2>
+                <Mainh2>PROFESSIONAL EXPERIENCE</Mainh2>
                 <Mainexperience>
                     <Mainexperiencetimeline>
                         <Mainexperiencetimelinep>
-                            Fév 2025 <br />
+                            Feb 2025 <br />
                             - <br />
-                            Août 2025
+                            Sep 2025
                         </Mainexperiencetimelinep>
                     </Mainexperiencetimeline>
                     <Mainexperiencecontent>
                         <Mainexperiencecontenth3>
-                            State of Fribourg — Senior Java Angular Developer
+                            State of Fribourg — Software Engineer | DevOps & Cloud
                         </Mainexperiencecontenth3>
                         <Mainexperiencecontentp>
                             Java 21 | Spring Boot | Azure SQL | Angular 16 | Vault | CI/CD | Azure
@@ -119,12 +142,12 @@ export default function CV() {
                             Oct 2024
                             <br />
                             - <br />
-                            Janv 2025
+                            Jan 2025
                         </Mainexperiencetimelinep>
                     </Mainexperiencetimeline>
                     <Mainexperiencecontent>
                         <Mainexperiencecontenth3>
-                            SGS — Senior Java Angular Developer
+                            SGS — Software Engineer | DevOps & Cloud
                         </Mainexperiencecontenth3>
                         <Mainexperiencecontentp>
                             Java 21 | Spring Boot | Azure SQL | Angular 16 | Vault | CI/CD | Azure
@@ -141,14 +164,14 @@ export default function CV() {
                 <Mainexperience>
                     <Mainexperiencetimeline>
                         <Mainexperiencetimelinep>
-                            Mars 2024 <br />
+                            Mar 2024 <br />
                             - <br />
                             Oct 2024
                         </Mainexperiencetimelinep>
                     </Mainexperiencetimeline>
                     <Mainexperiencecontent>
                         <Mainexperiencecontenth3>
-                            Alptis Insurance — Senior Java VueJS Developer
+                            Alptis Insurance — Software Engineer | DevOps & Cloud
                         </Mainexperiencecontenth3>
                         <Mainexperiencecontentp>
                             Java 21 | Spring Boot | VueJS | RabbitMQ | CI/CD | GitHub Actions
@@ -173,7 +196,7 @@ export default function CV() {
                     </Mainexperiencetimeline>
                     <Mainexperiencecontent>
                         <Mainexperiencecontenth3>
-                            Carrefour — Java Angular Developer
+                            Carrefour — Software Engineer | DevOps & Cloud
                         </Mainexperiencecontenth3>
                         <Mainexperiencecontentp>
                             Java 17 | Spring WebFlux | Kafka | PostgreSQL | Angular
@@ -196,7 +219,7 @@ export default function CV() {
                     </Mainexperiencetimeline>
                     <Mainexperiencecontent>
                         <Mainexperiencecontenth3>
-                            Canal+ Group — Java Angular Developer
+                            Canal+ Group — Software Engineer | DevOps & Cloud
                         </Mainexperiencecontenth3>
                         <Mainexperiencecontentp>
                             Java 11–17 | Spring Boot | MySQL | Angular | Jenkins | Docker
@@ -220,7 +243,7 @@ export default function CV() {
                     </Mainexperiencetimeline>
                     <Mainexperiencecontent>
                         <Mainexperiencecontenth3>
-                            Disneyland Paris — Java React Developer
+                            Disneyland Paris — Software Engineer | DevOps & Cloud
                         </Mainexperiencecontenth3>
                         <Mainexperiencecontentp>
                             Java 8–11 | Spring Boot | MySQL/Oracle | React
