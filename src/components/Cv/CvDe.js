@@ -1,9 +1,20 @@
 import React from "react";
-import {FaRegSmileWink, FaStar,} from "react-icons/fa";
+import {
+    FaEnvelope,
+    FaGithub,
+    FaLinkedin,
+    FaMapMarkerAlt,
+    FaPhone,
+    FaRegStar,
+    FaStar,
+} from "react-icons/fa";
 import {
     AsideBlock,
     AsideBlockh3,
     AsideBlockh3p,
+    AsideBlocksocial,
+    AsideBlocksociali,
+    AsideBlocksocialp,
     AsideBlockstarh3,
     AsideLeft,
     Footer,
@@ -23,245 +34,349 @@ import {
     Mainh2,
     Mainp,
     Picture,
-    Pictureimg
+    Pictureimg,
 } from "./Cv.elements";
-import profile from '../../images/profile.jpg';
+import profile from "../../images/profile.jpg";
+
+/* ---------- Daten ---------- */
+
+const contacts = [
+    { icon: <FaPhone />, label: "+41 76 625 55 08", href: "tel:+41766255508" },
+    { icon: <FaEnvelope />, label: "aymentli@gmail.com", href: "mailto:aymentli@gmail.com" },
+    { icon: <FaLinkedin />, label: "mohamed-aymen-tlili", href: "https://www.linkedin.com/in/mohamed-aymen-tlili" },
+    { icon: <FaGithub />, label: "Mohamed-Aymen-TLILI", href: "https://github.com/Mohamed-Aymen-TLILI" },
+    { icon: <FaMapMarkerAlt />, label: "Ecublens VD, Schweiz" },
+];
+
+const skills = [
+    {
+        title: "Anwendungs- & API-Sicherheit",
+        items: "OWASP Top 10, Secure Code Review, OAuth2, OpenID Connect, JWT, Spring Security, RBAC & feingranulare Autorisierung, TLS, Eingabevalidierung, Secure SDLC",
+    },
+    {
+        title: "Offensive Security & Audit",
+        items: "Sicherheitstests von Webanwendungen und Infrastrukturen, Tests von Authentifizierung und Zugriffskontrolle, Schwachstellenanalyse, Risikoanalyse, priorisierte Massnahmenpläne, technisches Reporting",
+    },
+    {
+        title: "KI-Sicherheit",
+        items: "OWASP Top 10 für LLM- / GenAI-Anwendungen, Prompt Injection, Datenabfluss über den Modellkontext, serverseitige Autorisierung hinter LLM-Endpunkten, Risiken der KI-Lieferkette, EU AI Act",
+    },
+    {
+        title: "DevSecOps & Cloud-Sicherheit",
+        items: "Härtung von CI/CD-Pipelines (Azure DevOps, GitLab CI, GitHub Actions, Jenkins), HashiCorp Vault, SonarQube, Least Privilege, Docker, Kubernetes, Terraform, Azure, GCP",
+    },
+    {
+        title: "Governance & Datenschutz",
+        items: "Sicherheits-Governance, Compliance, Datenminimierung, Anonymisierung, Zugriffstrennung, Nachvollziehbarkeit (nDSG / DSGVO)",
+    },
+    {
+        title: "Java & Architektur",
+        items: "Java 8 → 21, Spring Boot, Spring WebFlux, Hibernate / JPA, REST & OpenAPI, Microservices, ereignisgesteuerte Architektur (Kafka, RabbitMQ, NiFi)",
+    },
+    {
+        title: "Daten & Monitoring",
+        items: "Oracle, SQL Server, PostgreSQL, MongoDB, Redis, Elasticsearch · Prometheus, Grafana, Kibana, JMeter",
+    },
+    {
+        title: "Scripting & Frontend",
+        items: "PowerShell, Bash, Python · Angular, React, Vue.js, TypeScript",
+    },
+];
+
+const languages = [
+    { name: "Französisch", level: "Muttersprache", stars: 5 },
+    { name: "Englisch", level: "Fliessend", stars: 4 },
+    { name: "Deutsch", level: "Gute Kenntnisse (B2)", stars: 3 },
+];
+
+const experiences = [
+    {
+        from: "Jan. 2026",
+        to: "Apr. 2026",
+        title: "Information Security Engineer — Infrastruktur & DevSecOps",
+        company: "Lab4Tech, Lausanne (Schweiz) — Security-Mandat im Rahmen des MSc",
+        stack: "Azure | Azure DevOps | CI/CD | Secrets Management | PowerShell | Bash | Python | Windows | GNU/Linux",
+        bullets: [
+            "Absicherung der Software-Lieferkette und der CI/CD-Pipelines; Risikoanalyse der Build- und Deployment-Prozesse.",
+            "Technische Infrastruktur-Audits und Schwachstellenanalysen, geliefert als priorisierte Massnahmenpläne statt reiner Befundlisten.",
+            "Sichere Verwaltung von Secrets und Konfigurationen; Automatisierung wiederkehrender Sicherheitsaufgaben in PowerShell, Bash und Python.",
+            "Arbeiten zu Governance, Compliance und Datenschutz mit strukturiertem Reporting für technische und nicht-technische Stakeholder.",
+        ],
+    },
+    {
+        from: "Aug. 2025",
+        to: "Jan. 2026",
+        title: "Application Security Engineer — Offensive Security",
+        company: "Pawn and Patch (Frankreich) — Security-Mandat im Rahmen des MSc",
+        stack: "Web- & Infrastruktur-Sicherheitstests | OWASP Top 10 | OWASP Top 10 für LLM | Tests der Zugriffskontrolle | Risikoanalyse",
+        bullets: [
+            "Sicherheitstests von Webanwendungen und Infrastrukturen; Schwachstellenanalyse gemäss OWASP Top 10.",
+            "Bewertung von Authentifizierungs-, Autorisierungs- und Datenzugriffsmechanismen zur Identifikation ausnutzbarer Schwachstellen.",
+            "Analyse der Angriffsfläche KI-gestützter Funktionen: Prompt Injection, Datenabfluss über den Modellkontext und Umgehung der Autorisierung an LLM-Endpunkten.",
+            "Technische Risikobewertungen mit reproduzierbaren Befunden, identifiziertem Codepfad und konkreter, für Entwickler direkt umsetzbarer Korrektur.",
+        ],
+    },
+    {
+        from: "Feb. 2025",
+        to: "Sept. 2025",
+        title: "Senior Backend Engineer — Java / Sichere Architektur",
+        company: "SQLI — Kunde: Staat Freiburg (Schweiz)",
+        stack: "Java 21 | Spring Boot | Spring Security | OAuth2 | Hibernate | Oracle | SQL Server | Vault | Azure | Terraform | Docker | Angular",
+        bullets: [
+            "Modernisierung einer geschäftskritischen kantonalen Fachanwendung mit hohen Anforderungen an Sicherheit, Datenschutz, Nachvollziehbarkeit und Betriebskontinuität.",
+            "Umsetzung von Authentifizierung und Autorisierung mit Spring Security und OAuth2; Secrets-Verwaltung mit HashiCorp Vault.",
+            "Konzeption sicherer REST-APIs und Schnittstellen zu Drittsystemen; Mitwirkung an Architekturentscheidungen und Design-Reviews.",
+            "Containerisierung mit Docker und Bereitstellung der Azure-Infrastruktur mit Terraform; Betreuung der Umgebungen bis zur Abnahme in der Vorproduktion.",
+            "Personendaten von Bürgerinnen und Bürgern: Zugriffstrennung, Datenminimierung und Nachvollziehbarkeit von Anfang an im Design verankert.",
+        ],
+    },
+    {
+        from: "Okt. 2024",
+        to: "Jan. 2025",
+        title: "Senior Backend Engineer — Java",
+        company: "SQLI — Kunde: SGS, Genf (Schweiz)",
+        stack: "Java 21 | Spring Boot | Spring Security | Feign | Drools | SQL Server | RabbitMQ | Elasticsearch | Jenkins | Docker | Azure | Vault",
+        bullets: [
+            "Zwei internationale Unternehmensportale für mehrere Gesellschaften der Gruppe, mit Anbindung zahlreicher interner und externer Systeme.",
+            "Konzeption und Weiterentwicklung abgesicherter REST-Services; Modernisierung bestehender Komponenten und Aufbau neuer Schnittstellen.",
+            "Asynchrone Integration mit RabbitMQ, Service-Clients mit Feign, Geschäftsregeln mit Drools; Optimierung von Elasticsearch und SQL Server.",
+            "Jenkins-Pipelines und Docker-Deployments; Produktionssupport Level 2/3 mit Vault-verwalteten Secrets auf Azure.",
+        ],
+    },
+    {
+        from: "März 2024",
+        to: "Okt. 2024",
+        title: "Backend Engineer — Java / Spring Boot",
+        company: "Alptis Assurances, Lyon (Frankreich) — Krankenversicherung",
+        stack: "Java 17/21 | Spring Boot | Spring Security | Hibernate | OpenAPI | Drools | PostgreSQL | MongoDB | RabbitMQ | Docker | GitHub Actions",
+        bullets: [
+            "Verarbeitung sensibler Gesundheitsdaten in einem streng regulierten Umfeld; APIs abgesichert mit Spring Security.",
+            "Entwicklung von REST-APIs mit OpenAPI-Dokumentation; Umsetzung komplexer regulatorischer Regeln mit Drools auf PostgreSQL und MongoDB.",
+            "Migration auf Java 17 und anschliessend Java 21: Aktualisierung der Abhängigkeiten, Regressionskontrolle, ohne Serviceunterbruch.",
+            "Automatisierung der Deployments mit GitHub Actions.",
+        ],
+    },
+    {
+        from: "Nov. 2022",
+        to: "Jan. 2024",
+        title: "Backend Engineer — Verteilte & ereignisgesteuerte Architektur",
+        company: "Devoteam — Kunde: Carrefour, Massy (Frankreich)",
+        stack: "Java 17 | Spring WebFlux | Kafka | Apache NiFi | PostgreSQL | Redis | Elasticsearch | Docker | Kubernetes | Terraform | Jenkins | GCP",
+        bullets: [
+            "OneInvoice: verteilte, ereignisgesteuerte Rechnungsplattform für mehrere Gesellschaften der Gruppe, betrieben auf Google Cloud.",
+            "Mitwirkung an der Plattformarchitektur; Entwicklung reaktiver Microservices mit Spring WebFlux und Project Reactor.",
+            "Kafka- und Apache-NiFi-Flows mit Fehlerbehandlung, Retry-Mechanismen, Idempotenz und End-to-End-Nachverfolgbarkeit.",
+            "CI/CD mit Docker, Kubernetes, Terraform und Jenkins; Loganalyse, Produktionskorrekturen sowie Last- und Performancetests.",
+        ],
+    },
+    {
+        from: "Sept. 2020",
+        to: "Nov. 2022",
+        title: "Full-Stack Engineer — Java / Angular",
+        company: "Groupe Canal+, Issy-les-Moulineaux (Frankreich)",
+        stack: "Java 11/17 | Spring Boot | Spring Security | Kafka | Oracle | MySQL | Elasticsearch | Kibana | Docker | Kubernetes | Jenkins | GitLab CI | Angular",
+        bullets: [
+            "MediaHub: zentrale Plattform der Gruppe für Verwaltung, Programmplanung und Ausstrahlung audiovisueller Inhalte.",
+            "Java- / Spring-Boot-Microservices mit Spring Security und Kafka-Event-Streams; REST-APIs und interne Schnittstellen.",
+            "Docker- und Kubernetes-Deployments über Jenkins und GitLab CI/CD; Code-Reviews, Refactoring, Oracle- und MySQL-Tuning.",
+            "Incident-Analyse mit Kibana und Produktionssupport.",
+        ],
+    },
+    {
+        from: "Aug. 2019",
+        to: "März 2020",
+        title: "Application Engineer — Java / React",
+        company: "Bayron Group — Kunde: Disneyland Paris (Frankreich)",
+        stack: "Java | Spring Boot | React | Oracle | MySQL | Docker | Ansible",
+        bullets: [
+            "Backend mit Java / Spring Boot und Frontend mit React; Integration und Performance-Tuning von Oracle und MySQL.",
+            "Automatisierung mit CI, Docker und Ansible.",
+        ],
+    },
+    {
+        from: "2017",
+        to: "2019",
+        title: "IT-Projektleiter & Entwickler — Freelance",
+        company: "Frankreich",
+        stack: "Java | Spring Boot | Angular",
+        bullets: [
+            "Projektumsetzung von A bis Z: Anforderungsanalyse, Konzeption, Entwicklung, Tests, Go-live und Support, im direkten Kundenkontakt.",
+        ],
+    },
+];
+
+const education = [
+    { year: "2026", title: "MSc Informationssystem-Sicherheit", school: "Université de Technologie de Troyes (UTT), Frankreich" },
+    { year: "2026", title: "Oracle Certified Professional: Java SE 21 Developer", school: "Oracle" },
+    { year: "2026", title: "Microsoft Certified: DevOps Engineer Expert (AZ-400) & Azure Developer Associate (AZ-204)", school: "Microsoft" },
+    { year: "2017", title: "Master in Management", school: "Université Paris-Sud (Paris XI), Frankreich" },
+    { year: "2014", title: "Bachelor in Betriebswirtschaft", school: "Université Paris Ouest Nanterre, Frankreich" },
+    { year: "2012", title: "Bachelor in Informatik", school: "Université de la Manouba, Tunesien" },
+];
+
+/* ---------- Komponenten ---------- */
+
+function Stars({ count, max = 5 }) {
+    return (
+        <span aria-label={`${count} von ${max}`}>
+            {Array.from({ length: max }, (_, i) => (i < count ? <FaStar key={i} /> : <FaRegStar key={i} />))}
+        </span>
+    );
+}
+
+function Entry({ from, to, title, company, stack, bullets }) {
+    return (
+        <Mainexperience>
+            <Mainexperiencetimeline>
+                <Mainexperiencetimelinep>
+                    {from}
+                    {to && (
+                        <>
+                            <br />-<br />
+                            {to}
+                        </>
+                    )}
+                </Mainexperiencetimelinep>
+            </Mainexperiencetimeline>
+            <Mainexperiencecontent>
+                <Mainexperiencecontenth3>{title}</Mainexperiencecontenth3>
+                <Mainexperiencecontentp>
+                    <strong>{company}</strong>
+                </Mainexperiencecontentp>
+                {stack && <Mainexperiencecontentp>{stack}</Mainexperiencecontentp>}
+                {bullets && (
+                    <Mainexperiencecontentul>
+                        {bullets.map((b) => (
+                            <li key={b}>{b}</li>
+                        ))}
+                    </Mainexperiencecontentul>
+                )}
+            </Mainexperiencecontent>
+        </Mainexperience>
+    );
+}
+
+/* ---------- Seite ---------- */
 
 export default function CV() {
     return (
         <GridLayout>
             <Header>
                 <Headerh1>Mohamed Aymen TLILI</Headerh1>
-                <Headerp>
-                    DevSecOps Ingenieur | Cloud & CI/CD Spezialist
+                <Headerp>Application Security & DevSecOps Engineer | Senior Java</Headerp>
+                <Headerp style={{ fontSize: "1.4rem" }}>
+                    8+ Jahre Entwicklung sicherer Java-Systeme · MSc Informationssystem-Sicherheit · OCP Java SE 21 · AZ-400
                 </Headerp>
             </Header>
+
             <Picture>
-                <Pictureimg src={profile} alt="test" />
+                <Pictureimg src={profile} alt="Mohamed Aymen Tlili" />
             </Picture>
+
             <AsideLeft>
                 <AsideBlock>
                     <AsideBlockh3>KONTAKT</AsideBlockh3>
-                    <AsideBlockh3>Telefon</AsideBlockh3>
-                    <AsideBlockh3p>+41 76 625 55 08</AsideBlockh3p>
-                    <AsideBlockh3>E-Mail</AsideBlockh3>
-                    <AsideBlockh3p>aymentli@gmail.com</AsideBlockh3p>
-                    <AsideBlockh3>Adresse</AsideBlockh3>
+                    {contacts.map(({ icon, label, href }) => (
+                        <AsideBlocksocial
+                            key={label}
+                            as={href ? "a" : "div"}
+                            href={href}
+                            target={href && href.startsWith("http") ? "_blank" : undefined}
+                            rel={href && href.startsWith("http") ? "noopener noreferrer" : undefined}
+                            style={{ color: "inherit", textDecoration: "none" }}
+                        >
+                            <AsideBlocksociali>{icon}</AsideBlocksociali>
+                            <AsideBlocksocialp>{label}</AsideBlocksocialp>
+                        </AsideBlocksocial>
+                    ))}
+                </AsideBlock>
+
+                <AsideBlock>
+                    <AsideBlockh3>STATUS</AsideBlockh3>
                     <AsideBlockh3p>
-                        Chemin de veilloud 11
-                        <br/>
-                        1024 Ecublens VD
+                        Französischer Staatsbürger (EU) · Aufenthaltsbewilligung B
+                        <br />
+                        Sofort verfügbar, 100 %
                     </AsideBlockh3p>
                 </AsideBlock>
-                <AsideBlockh3>KERNKOMPETENZEN</AsideBlockh3>
-                <AsideBlockh3p>
-                    <strong>CI/CD & Automatisierung:</strong>
-                    GitHub Actions, Jenkins, Azure DevOps
-                </AsideBlockh3p>
 
-                <AsideBlockh3p>
-                    <strong>Cloud & Infrastruktur:</strong>
-                    Azure, GCP, Docker, Kubernetes, Terraform
-                </AsideBlockh3p>
-
-                <AsideBlockh3p>
-                    <strong>Backend Entwicklung:</strong>
-                    Java, Spring Boot, REST APIs, Kafka, RabbitMQ
-                </AsideBlockh3p>
-
-                <AsideBlockh3p>
-                    <strong>Sicherheit & DevSecOps:</strong>
-                    OAuth2, RBAC, OWASP, Vault, Sicherer SDLC
-                </AsideBlockh3p>
-
-                <AsideBlockh3p>
-                    <strong>Monitoring:</strong>
-                    ELK Stack, Kibana, Logging, Leistungsanalyse
-                </AsideBlockh3p>
-
-                <AsideBlockh3p>
-                    <strong>Frontend:</strong>
-                    Angular, React, Vue.js, TypeScript
-                </AsideBlockh3p>
                 <AsideBlock>
-                    <AsideBlockh3>Sprachen</AsideBlockh3>
-                    <AsideBlockstarh3>
-                        Englisch  <br />
-                        <FaStar />
-                        <FaStar />
-                        <FaStar />
-                        <FaStar />
-                        <FaStar />
-                    </AsideBlockstarh3>
-                    <AsideBlockstarh3>
-                        Deutsch  <br />
-                        <FaStar />
-                    </AsideBlockstarh3>
+                    <AsideBlockh3>KERNKOMPETENZEN</AsideBlockh3>
+                    {skills.map(({ title, items }) => (
+                        <AsideBlockh3p key={title}>
+                            <strong>{title}:</strong> {items}
+                        </AsideBlockh3p>
+                    ))}
+                </AsideBlock>
+
+                <AsideBlock>
+                    <AsideBlockh3>SPRACHEN</AsideBlockh3>
+                    {languages.map(({ name, level, stars }) => (
+                        <AsideBlockstarh3 key={name}>
+                            {name} — {level}
+                            <br />
+                            <Stars count={stars} />
+                        </AsideBlockstarh3>
+                    ))}
                 </AsideBlock>
             </AsideLeft>
+
             <Main>
-                <Mainh2>BERUFLICHER WERDEGANG</Mainh2>
+                <Mainh2>PROFIL</Mainh2>
                 <Mainp>
-                    DevSecOps Ingenieur & Softwareentwickler mit über 7 Jahren Erfahrung in der Konzeption, dem Aufbau und dem Betrieb skalierbarer Cloud-nativer Anwendungen und verteilter Systeme.
-
-                    Umfassende Expertise in CI/CD-Automatisierung, sicherer Softwareauslieferung, Cloud-Plattformen und Infrastrukturpraktiken mit praktischer Erfahrung in der Integration von Sicherheit während des gesamten Softwareentwicklungslebenszyklus.
-
-                    Erfahrung in der Backend-Entwicklung mit Java/Spring Boot, Cloud-Deployments auf Azure, containerisierten Umgebungen, API-Sicherheit, Observabilität und Fehlerbehebung in der Produktion.
-
-                    Microsoft-zertifizierter DevOps Engineer Expert (AZ-400) und Inhaber eines Master-Abschlusses in Cybersicherheit mit starkem Fokus auf DevSecOps, Plattformzuverlässigkeit und Cloud-Sicherheit.
+                    <p>
+                        Application Security & DevSecOps Engineer mit über 8 Jahren Erfahrung in der Java-Backend-Entwicklung
+                        geschäftskritischer Systeme für eine Schweizer Kantonsverwaltung, einen internationalen
+                        Prüfkonzern (SGS), die Krankenversicherung, den Detailhandel und die Medienbranche.
+                    </p>
+                    <p>
+                        In diesen Jahren habe ich sichere Java-Systeme aufgebaut: Authentifizierung mit Spring
+                        Security und OAuth2, APIs, CI/CD-Pipelines, Secrets-Verwaltung mit HashiCorp Vault sowie die
+                        Verarbeitung von Personen- und Gesundheitsdaten. Danach habe ich mich mit einem MSc in
+                        Informationssystem-Sicherheit (2026) und zwei Security-Mandaten auf Sicherheit spezialisiert:
+                        eines in Offensive Security, eines in Infrastruktursicherheit / DevSecOps. Zertifiziert als
+                        Oracle Java SE 21 Professional (OCP) und Microsoft AZ-400 / AZ-204.
+                    </p>
+                    <p>
+                        Ich gehe Sicherheit aus der Engineering-Perspektive an: Ich habe die Authentifizierungs- und
+                        Autorisierungsflüsse, APIs, CI/CD-Pipelines, Secrets-Verwaltung und Datenverarbeitung selbst
+                        gebaut, die Security-Teams prüfen. Deshalb weiss ich, wo die Schwachstellen tatsächlich
+                        liegen, und formuliere Massnahmen, die ein Entwickler am Montagmorgen direkt umsetzen kann.
+                    </p>
+                    <p>
+                        Aktueller Schwerpunkt: Sicherheit KI-gestützter Anwendungen (OWASP Top 10 für LLM, Prompt
+                        Injection, Datenabfluss, serverseitige Autorisierung) und der Einsatz von KI im Security
+                        Engineering, im Rahmen von nDSG, DSGVO und EU AI Act.
+                    </p>
                 </Mainp>
-                <Mainh2>BERUFSERFAHRUNG</Mainh2>
-                <Mainexperience>
-                    <Mainexperiencetimeline>
-                        <Mainexperiencetimelinep>
-                            Feb 2025 <br />
-                            - <br />
-                            Sep 2025
-                        </Mainexperiencetimelinep>
-                    </Mainexperiencetimeline>
-                    <Mainexperiencecontent>
-                        <Mainexperiencecontenth3>
-                            Staat Freiburg — Softwareingenieur | DevOps & Cloud
-                        </Mainexperiencecontenth3>
-                        <Mainexperiencecontentp>
-                            Java 21 | Spring Boot | Azure SQL | Angular 16 | Vault | CI/CD | Azure
-                        </Mainexperiencecontentp>
-                        <Mainexperiencecontentul>
-                            Konzeption und Entwicklung sicherer REST-APIs (Spring Security, RBAC)<br/>
-                            Sicherheitstests und API-Härtung (OWASP Top 10, Validierung, Zugriffskontrolle)<br/>
-                            CI/CD-Integration mit Sicherheits- und Qualitätsprüfungen (automatisierte Tests, Abhängigkeitsscans)<br/>
-                            Azure Cloud-Integration und Geheimnisverwaltung (Vault)<br/>
-                            SQL-Leistungsoptimierung und Stabilitätsverbesserungen<br/>
-                            Code-Reviews und kontinuierliche Verbesserungspraktiken<br/>
-                        </Mainexperiencecontentul>
-                    </Mainexperiencecontent>
-                </Mainexperience>
-                <Mainexperience>
-                    <Mainexperiencetimeline>
-                        <Mainexperiencetimelinep>
-                            Okt 2024
-                            <br />
-                            - <br />
-                            Jan 2025
-                        </Mainexperiencetimelinep>
-                    </Mainexperiencetimeline>
-                    <Mainexperiencecontent>
-                        <Mainexperiencecontenth3>
-                            SGS — Softwareingenieur | DevOps & Cloud
-                        </Mainexperiencecontenth3>
-                        <Mainexperiencecontentp>
-                            Java 21 | Spring Boot | Azure SQL | Angular 16 | Vault | CI/CD | Azure
-                        </Mainexperiencecontentp>
-                        <Mainexperiencecontentul>
-                            Entwicklung sicherer REST-Dienste (Spring Security)<br/>
-                            Anwendungssicherheitstests (Zugriffskontrolle, Validierung, OWASP)<br/>
-                            CI/CD-Integration und automatisierte Tests<br/>
-                            Azure Cloud-Integration und Geheimnisverwaltung<br/>
-                            JPA/SQL-Optimierung und Anwendungswartung<br/>
-                        </Mainexperiencecontentul>
-                    </Mainexperiencecontent>
-                </Mainexperience>
-                <Mainexperience>
-                    <Mainexperiencetimeline>
-                        <Mainexperiencetimelinep>
-                            Mär 2024 <br />
-                            - <br />
-                            Okt 2024
-                        </Mainexperiencetimelinep>
-                    </Mainexperiencetimeline>
-                    <Mainexperiencecontent>
-                        <Mainexperiencecontenth3>
-                            Alptis Versicherung — Softwareingenieur | DevOps & Cloud
-                        </Mainexperiencecontenth3>
-                        <Mainexperiencecontentp>
-                            Java 21 | Spring Boot | VueJS | RabbitMQ | CI/CD | GitHub Actions
-                        </Mainexperiencecontentp>
-                        <Mainexperiencecontentul>
-                            Backend-Entwicklung mit Spring Boot<br/>
-                            Implementierung von API-Sicherheit und Validierungsmechanismen<br/>
-                            RabbitMQ-Integration für asynchrone Kommunikation<br/>
-                            CI/CD-Automatisierung mit GitHub Actions<br/>
-                            Produktionssupport und Incident-Lösung<br/>
-                        </Mainexperiencecontentul>
 
-                    </Mainexperiencecontent>
-                </Mainexperience>
-                <Mainexperience>
-                    <Mainexperiencetimeline>
-                        <Mainexperiencetimelinep>
-                            Nov 2022 <br />
-                            - <br />
-                            Jan 2024
-                        </Mainexperiencetimelinep>
-                    </Mainexperiencetimeline>
-                    <Mainexperiencecontent>
-                        <Mainexperiencecontenth3>
-                            Carrefour — Softwareingenieur | DevOps & Cloud
-                        </Mainexperiencecontenth3>
-                        <Mainexperiencecontentp>
-                            Java 17 | Spring WebFlux | Kafka | PostgreSQL | Angular
-                        </Mainexperiencecontentp>
-                        <Mainexperiencecontentul>
-                            Microservices-Entwicklung (Spring Boot / WebFlux)<br/>
-                            Entwicklung sicherer APIs (Spring Security, OWASP Best Practices)<br/>
-                            Kafka-Integration für asynchrone Workflows<br/>
-                            SQL-Optimierung und Codequalitätsverbesserungen<br/>
-                        </Mainexperiencecontentul>
-                    </Mainexperiencecontent>
-                </Mainexperience>
-                <Mainexperience>
-                    <Mainexperiencetimeline>
-                        <Mainexperiencetimelinep>
-                            Sep 2020 <br />
-                            - <br />
-                            Nov 2022
-                        </Mainexperiencetimelinep>
-                    </Mainexperiencetimeline>
-                    <Mainexperiencecontent>
-                        <Mainexperiencecontenth3>
-                            Canal+ Gruppe — Softwareingenieur | DevOps & Cloud
-                        </Mainexperiencecontenth3>
-                        <Mainexperiencecontentp>
-                            Java 11–17 | Spring Boot | MySQL | Angular | Jenkins | Docker
-                        </Mainexperiencecontentp>
-                        <Mainexperiencecontentul>
-                            Entwicklung sicherer Microservices<br/>
-                            Spring Security Implementierung<br/>
-                            SQL-Leistungsoptimierung<br/>
-                            CI/CD-Automatisierung und containerisierte Bereitstellungen<br/>
-                            Agile Zusammenarbeit und Code-Reviews<br/>
-                        </Mainexperiencecontentul>
-                    </Mainexperiencecontent>
-                </Mainexperience>
-                <Mainexperience>
-                    <Mainexperiencetimeline>
-                        <Mainexperiencetimelinep>
-                            Aug 2019 <br />
-                            - <br />
-                            Mär 2020
-                        </Mainexperiencetimelinep>
-                    </Mainexperiencetimeline>
-                    <Mainexperiencecontent>
-                        <Mainexperiencecontenth3>
-                            Disneyland Paris — Softwareingenieur | DevOps & Cloud
-                        </Mainexperiencecontenth3>
-                        <Mainexperiencecontentp>
-                            Java 8–11 | Spring Boot | MySQL/Oracle | React
-                        </Mainexperiencecontentp>
-                        <Mainexperiencecontentul>
-                            Implementierung von Backend-Funktionen<br/>
-                            Entwicklung sicherer APIs<br/>
-                            Datenbankoptimierung<br/>
-                            Wartung und kontinuierliche Verbesserungen<br/>
-                        </Mainexperiencecontentul>
-                    </Mainexperiencecontent>
-                </Mainexperience>
+                <Mainh2>BERUFSERFAHRUNG</Mainh2>
+                {experiences.map((exp) => (
+                    <Entry key={exp.title + exp.from} {...exp} />
+                ))}
+
+                <Mainh2>AUSBILDUNG & ZERTIFIZIERUNGEN</Mainh2>
+                {education.map(({ year, title, school }) => (
+                    <Entry key={title} from={year} title={title} company={school} />
+                ))}
             </Main>
+
             <Footer>
-                <Footerh2>
-                    <span>aymentli@gmail.com </span>
-                    <FaRegSmileWink />
-                </Footerh2>
+                <Footerh2>Sprechen wir über Sicherheit</Footerh2>
+                <p>
+                    <a href="mailto:aymentli@gmail.com" style={{ color: "white" }}>
+                        aymentli@gmail.com
+                    </a>
+                    {" · "}
+                    <a
+                        href="https://www.linkedin.com/in/mohamed-aymen-tlili"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: "white" }}
+                    >
+                        LinkedIn
+                    </a>
+                </p>
             </Footer>
         </GridLayout>
     );
